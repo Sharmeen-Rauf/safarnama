@@ -1,0 +1,5 @@
+# Environment Variables (Contains sensitive Aiven credentials)
+.env
+
+# Local Mock Database fallback
+db_fallback.json
