@@ -38,6 +38,13 @@ try {
 
     $user = $users[0];
 
+    // Check if user is blocked (FR10)
+    if (isset($user['is_blocked']) && $user['is_blocked'] == 1) {
+        http_response_code(403);
+        echo json_encode(["message" => "Your account has been blocked by the Administrator. Please contact support."]);
+        exit();
+    }
+
     // Verify Password against stored hash
     if (!password_verify($password, $user['password'])) {
         http_response_code(401);

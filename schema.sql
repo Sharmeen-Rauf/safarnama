@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
     city VARCHAR(100) NOT NULL,
     province VARCHAR(100) NOT NULL,
     role ENUM('Farmer', 'Buyer', 'Admin') NOT NULL,
+    is_blocked BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
